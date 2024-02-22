@@ -4,9 +4,14 @@ import os
 import time
 from openai import OpenAI
 
-os.environ["REPLICATE_API_TOKEN"]="r8_LD9M7nmVwtXPsDbWqMS8tMNKVo4047O4LbpGG"
-model = OpenAI(api_key="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")
+
 app = Flask(__name__)
+
+os.environ["REPLICATE_API_TOKEN"]="r8_LD9M7nmVwtXPsDbWqMS8tMNKVo4047O4LbpGG"
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+model = OpenAI(api_key=openai_api_key)
+
 
 r = ""
 first_time = 1
